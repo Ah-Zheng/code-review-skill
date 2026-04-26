@@ -1,85 +1,31 @@
 ---
 name: code-review
-description: TODO: Complete and informative explanation of what the skill does and when to use it. Include WHEN to use this skill - specific scenarios, file types, or tasks that trigger it.
+description: 專業程式碼審核專家。當使用者需要對程式碼進行品質檢查、邏輯審核、安全性評估或效能優化建議時使用。
 ---
 
-# Code Review
+# Code Review Expert
 
-## Overview
+你是一位資深的軟體工程師，專精於提供高品質的程式碼審核建議。你的目標是幫助開發者提升程式碼的健壯性、可維護性與安全性。
 
-[TODO: 1-2 sentences explaining what this skill enables]
+## 執行流程
 
-## Structuring This Skill
+1.  **確認審核範圍**：識別使用者提供的檔案或程式碼片段。
+2.  **選擇審核重點**：如果使用者沒有指定特定的審核面向，你**必須**主動列出以下選項並請使用者選擇（支援多選）：
+    *   **[L] 邏輯與正確性 (Logic)**: 演算法、邊界條件、非同步處理。
+    *   **[S] 安全性 (Security)**: 漏洞防範、資料加密、輸入驗證。
+    *   **[P] 效能 (Performance)**: 複雜度優化、資源管理、快取策略。
+    *   **[N] 命名與可讀性 (Naming)**: 命名規範、意圖明確性、文件化。
+    *   **[B] 最佳實踐 (Best Practices)**: 設計模式、DRY/SOLID 原則、現代語法。
+    *   **[A] 全方位審核 (All-in-one)**: 以上全部。
+3.  **載入參考指南**：根據使用者的選擇，讀取 `references/` 目錄下對應的 `.md` 檔案以獲取更詳細的審核清單。
+4.  **提供回饋**：
+    *   使用結構化的方式呈現（建議區分：嚴重問題、優化建議、肯定點）。
+    *   提供具體的程式碼重構範例。
+    *   解釋「為什麼」這樣改會更好。
 
-[TODO: Choose the structure that best fits this skill's purpose. Common patterns:
-
-**1. Workflow-Based** (best for sequential processes)
-- Works well when there are clear step-by-step procedures
-- Example: CSV-Processor skill with "Workflow Decision Tree" → "Ingestion" → "Cleaning" → "Analysis"
-- Structure: ## Overview → ## Workflow Decision Tree → ## Step 1 → ## Step 2...
-
-**2. Task-Based** (best for tool collections)
-- Works well when the skill offers different operations/capabilities
-- Example: PDF skill with "Quick Start" → "Merge PDFs" → "Split PDFs" → "Extract Text"
-- Structure: ## Overview → ## Quick Start → ## Task Category 1 → ## Task Category 2...
-
-**3. Reference/Guidelines** (best for standards or specifications)
-- Works well for brand guidelines, coding standards, or requirements
-- Example: Brand styling with "Brand Guidelines" → "Colors" → "Typography" → "Features"
-- Structure: ## Overview → ## Guidelines → ## Specifications → ## Usage...
-
-**4. Capabilities-Based** (best for integrated systems)
-- Works well when the skill provides multiple interrelated features
-- Example: Product Management with "Core Capabilities" → numbered capability list
-- Structure: ## Overview → ## Core Capabilities → ### 1. Feature → ### 2. Feature...
-
-Patterns can be mixed and matched as needed. Most skills combine patterns (e.g., start with task-based, add workflow for complex operations).
-
-Delete this entire "Structuring This Skill" section when done - it's just guidance.]
-
-## [TODO: Replace with the first main section based on chosen structure]
-
-[TODO: Add content here. See examples in existing skills:
-- Code samples for technical skills
-- Decision trees for complex workflows
-- Concrete examples with realistic user requests
-- References to scripts/templates/references as needed]
-
-## Resources
-
-This skill includes example resource directories that demonstrate how to organize different types of bundled resources:
-
-### scripts/
-Executable code that can be run directly to perform specific operations.
-
-**Examples from other skills:**
-- PDF skill: fill_fillable_fields.cjs, extract_form_field_info.cjs - utilities for PDF manipulation
-- CSV skill: normalize_schema.cjs, merge_datasets.cjs - utilities for tabular data manipulation
-
-**Appropriate for:** Node.cjs scripts (cjs), shell scripts, or any executable code that performs automation, data processing, or specific operations.
-
-**Note:** Scripts may be executed without loading into context, but can still be read by Gemini CLI for patching or environment adjustments.
-
-### references/
-Documentation and reference material intended to be loaded into context to inform Gemini CLI's process and thinking.
-
-**Examples from other skills:**
-- Product management: communication.md, context_building.md - detailed workflow guides
-- BigQuery: API reference documentation and query examples
-- Finance: Schema documentation, company policies
-
-**Appropriate for:** In-depth documentation, API references, database schemas, comprehensive guides, or any detailed information that Gemini CLI should reference while working.
-
-### assets/
-Files not intended to be loaded into context, but rather used within the output Gemini CLI produces.
-
-**Examples from other skills:**
-- Brand styling: PowerPoint template files (.pptx), logo files
-- Frontend builder: HTML/React boilerplate project directories
-- Typography: Font files (.ttf, .woff2)
-
-**Appropriate for:** Templates, boilerplate code, document templates, images, icons, fonts, or any files meant to be copied or used in the final output.
-
----
-
-**Any unneeded directories can be deleted.** Not every skill requires all three types of resources.
+## 參考資源
+- **邏輯審核**: [references/logic.md](references/logic.md)
+- **安全性審核**: [references/security.md](references/security.md)
+- **效能審核**: [references/performance.md](references/performance.md)
+- **命名審核**: [references/naming.md](references/naming.md)
+- **最佳實踐審核**: [references/best-practices.md](references/best-practices.md)
