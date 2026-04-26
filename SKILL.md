@@ -35,9 +35,10 @@ description: 專業程式碼審核專家。當使用者需要對程式碼進行�
     *   **HTML 報告模式**：
         當使用者明確要求生成 HTML 報告（例如：「生成 HTML 報告」）時：
         1. 讀取 `assets/report_template.html`。
-        2. 將審核結果填入模板中對應的標籤（如 `{{OVERALL_SUMMARY}}`, `{{SEVERITY}}`, `{{TITLE}}` 等）。
+        2. 將審核結果填入模板中對應的標籤。
         3. 為多個問題重複 `<!-- ISSUE_START -->` 與 `<!-- ISSUE_END -->` 之間的區塊。
         4. 將最終結果寫入一個名為 `review-report.html` 的檔案。
+        5. **自動化操作**：檔案生成後，主動詢問使用者是否要在瀏覽器中開啟報告。若使用者同意，根據作業系統執行對應指令（macOS: `open`, Windows: `start`, Linux: `xdg-open`）。
     *   **總結**：在詳細列出問題後，提供一個簡短的整體評價與改進優先順序建議。
 
 ## 參考資源
