@@ -16,9 +16,14 @@ description: 專業程式碼審核專家。當使用者需要對程式碼進行�
     *   **[P] 效能 (Performance)**: 複雜度優化、資源管理、快取策略。
     *   **[N] 命名與可讀性 (Naming)**: 命名規範、意圖明確性、文件化。
     *   **[B] 最佳實踐 (Best Practices)**: 設計模式、DRY/SOLID 原則、現代語法。
+    *   **[V] 視覺比對審核 (Visual Review)**: 使用 browser-agent 比對設計稿 (HTML) 與實作成果 (URL)。
     *   **[A] 全方位審核 (All-in-one)**: 以上全部。
 3.  **載入參考指南**：根據使用者的選擇，讀取 `references/` 目錄下對應的 `.md` 檔案以獲取更詳細的審核清單。
-4.  **提供回饋**：
+4.  **執行視覺比對 (若選擇 [V])**：
+    *   主動要求使用者提供兩個來源：**設計稿路徑/URL** 與 **開發中 URL (如 localhost)**。
+    *   調用 `browser-agent` 分別開啟兩個頁面並截圖。
+    *   進行視覺比對，識別佈局、顏色、字體與間距的差異。
+5.  **提供回饋**：
     *   **嚴重程度分級**：
         *   **P0**: 致命錯誤（如：系統崩潰、嚴重安全性漏洞、資料遺失風險）。
         *   **P1**: 嚴重問題（如：功能邏輯錯誤、效能嚴重低落、不符合關鍵安全性要求）。
@@ -47,3 +52,4 @@ description: 專業程式碼審核專家。當使用者需要對程式碼進行�
 - **效能審核**: [references/performance.md](references/performance.md)
 - **命名審核**: [references/naming.md](references/naming.md)
 - **最佳實踐審核**: [references/best-practices.md](references/best-practices.md)
+- **視覺審核**: [references/visual.md](references/visual.md)
