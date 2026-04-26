@@ -16,6 +16,7 @@ description: 專業程式碼審核專家。當使用者需要對程式碼進行�
     *   **[P] 效能 (Performance)**: 複雜度優化、資源管理、快取策略。
     *   **[N] 命名與可讀性 (Naming)**: 命名規範、意圖明確性、文件化。
     *   **[B] 最佳實踐 (Best Practices)**: 設計模式、DRY/SOLID 原則、現代語法。
+    *   **[F] 檔案架構 (FSD)**: Feature-Sliced Design 架構規範審核。
     *   **[V] 視覺比對審核 (Visual Review)**: 使用 browser-agent 比對設計稿 (HTML) 與實作成果 (URL)。
     *   **[A] 全方位審核 (All-in-one)**: 以上全部。
 3.  **載入參考指南**：根據使用者的選擇，讀取 `references/` 目錄下對應的 `.md` 檔案以獲取更詳細的審核清單。
@@ -35,7 +36,7 @@ description: 專業程式碼審核專家。當使用者需要對程式碼進行�
         **[{分級}] {標題}**
         - **問題位置**：{檔案路徑}:{行號}
         - **問題主因**：描述問題發生的具體原因與影響。
-        - **解決方式**：提出具體且有建設性的重構建議或程式碼範例。
+        - **解決方式**：提出具體且有建設性的重構建議或程式碼範例，**並在合適時附上參考文件連結（如 FSD 官網）**。
         ---
     *   **HTML 報告模式**：
         當使用者明確要求生成 HTML 報告（例如：「生成 HTML 報告」）時：
@@ -53,3 +54,4 @@ description: 專業程式碼審核專家。當使用者需要對程式碼進行�
 - **命名審核**: [references/naming.md](references/naming.md)
 - **最佳實踐審核**: [references/best-practices.md](references/best-practices.md)
 - **視覺審核**: [references/visual.md](references/visual.md)
+- **FSD 架構審核**: [references/fsd.md](references/fsd.md)
