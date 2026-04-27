@@ -58,6 +58,7 @@ description: 專業程式碼審核專家。預設進行通用審核，支援 FSD
 ## 參考資源
 - **通用準則**: [references/general.md](references/general.md)
 - **自定義規範**: [references/custom-rules.md](references/custom-rules.md)
+- **Monorepo 規範**: [references/monorepo.md](references/monorepo.md)
 - **Vue 2 規範**: [references/vue2.md](references/vue2.md)
 - **Vue 3 規範**: [references/vue3.md](references/vue3.md)
 - **FSD 架構**: [references/fsd.md](references/fsd.md)
