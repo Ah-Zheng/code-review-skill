@@ -24,7 +24,7 @@ description: 專業程式碼審核專家。專注於精確、謹慎的深度審�
     *   偵測到 `tsconfig.json` 或 `.ts` / `.tsx` 檔案時，載入 `references/typescript.md`。
     *   偵測到 `pnpm-workspace.yaml` 或 `turbo.json`時，載入 `references/monorepo.md`。
     *   若偵測到 Vue 2 相關語法（如 `data()`, `methods`）或設定，載入 `references/vue2.md`。
-    *   若偵測到 Vue 3 相關語法（如 `setup`, `ref`, `reactive`）或設定，載入 `references/vue3.md`。
+    *   若偵測到 Vue 3 相關語法（如 `setup`, `ref`, `reactive`）時，載入 `references/vue3.md`。
     *   若為 FSD 專案 or 提及架構，載入 `references/fsd.md`。
     *   若提及視覺或跑版，載入 `references/visual.md` 並啟動 `browser-agent` 流程。
 
@@ -63,9 +63,11 @@ description: 專業程式碼審核專家。專注於精確、謹慎的深度審�
         - **建議修正**：[具體建議和範例程式碼，若有官方文件請附上連結]
         - **理由**：[為何需要修正]
 5.  **HTML 報告 (僅限明確要求)**：
-    *   只有當使用者說「生成報告」或「生成 HTML」時，才讀取 `assets/report_template.html` 並生成 `review-report.html`。
+    *   只有當使用者說「生成報告」或「生成 HTML」時，才讀取 `assets/report_template.html`。
+    *   **儲存位置**：統一儲存於 Skill 目錄下的 `reports/` 資料夾。
+    *   **命名格式**：`review-[YYYYMMDD]-[HHMMSS]-[ProjectName].html` (例如: `review-20260427-143000-kirby.html`)。
     *   **報告內容需包含**：整體總結、**本次審核套用的規範清單 (填入 USED_REFERENCES)**。
-    *   **USED_REFERENCES 填寫要求**：必須區分並列出 **[全域規範]** (如 General, Vue3) 與 **[專案特定規範]** (含 GEMINI.md 指定路徑或 .gemini/references/)。
+    *   **USED_REFERENCES 填寫要求**：必須區分並列出 **[全域規範]** 與 **[專案特定規範]**。
     *   發現的問題（含影響範圍、複製按鈕邏輯）。
     *   生成後詢問是否開啟。
 
