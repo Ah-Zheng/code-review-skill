@@ -64,7 +64,7 @@ description: 專業程式碼審核專家。專注於精確、謹慎的深度審�
         - **理由**：[為何需要修正]
 5.  **HTML 報告 (僅限明確要求)**：
     *   只有當使用者說「生成報告」或「生成 HTML」時，才讀取 `assets/report_template.html`。
-    *   **儲存位置**：統一儲存於 Skill 目錄下的 `reports/` 資料夾。
+    *   **儲存位置**：統一儲存於全域 `~/.gemini/reports/` 資料夾，避免受技能版控影響。
     *   **命名格式**：`review-[YYYYMMDD]-[HHMMSS]-[ProjectName].html` (例如: `review-20260427-143000-kirby.html`)。
     *   **報告內容需包含**：整體總結、**本次審核套用的規範清單 (填入 USED_REFERENCES)**。
     *   **USED_REFERENCES 填寫要求**：必須區分並列出 **[全域規範]** 與 **[專案特定規範]**。
