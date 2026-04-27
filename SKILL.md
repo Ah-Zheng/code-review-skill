@@ -14,8 +14,11 @@ description: 專業程式碼審核專家。預設進行通用審核，支援 FSD
     *   **載入專案規則**：自動檢查目前專案根目錄是否有 `.gemini/references/` 資料夾。若有，載入該資料夾內所有 `.md` 檔案作為審核依據；若無則跳過。
     *   **優先順序**：若專案規則與全域規則衝突，以**專案規則優先**。
 2.  **進階模式 (選用)**：
+    *   若偵測到 Vue 2 相關語法（如 `data()`, `methods`）或設定，載入 `references/vue2.md`。
+    *   若偵測到 Vue 3 相關語法（如 `setup`, `ref`, `reactive`）或設定，載入 `references/vue3.md`。
     *   若為 FSD 專案或提及架構，載入 `references/fsd.md`。
     *   若提及視覺或跑版，載入 `references/visual.md` 並啟動 `browser-agent` 流程。
+
 3.  **回饋格式**：
     *   預設在對話中以 Markdown 格式輸出。
     *   **嚴重程度分級與格式**：
