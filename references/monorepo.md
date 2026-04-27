@@ -12,7 +12,7 @@
     - 確保專案間的引用是透過 `package.json` 定義，而非相對路徑引用。
 
 ## 建議與預防建議
-- **Phantom Dependencies**: 利用 pnpm 嚴格的 node_modules 結構，確保沒有引用到未宣告的套件。
+- **Phantom Dependencies**: 利用 pnpm 嚴格的 node_modules 結構，確保沒有引用到未宣告的套件（例如：避免在 Package A 中引用未在其 `package.json` 宣告的套件，即便該套件已存在於根目錄或其他 Package 中）。
 - **Version Mismatch**: 使用 `pnpm manypkg check` 或類似工具確保各 workspace 間的同名套件版本一致。
 - **Pruning**: 在部署階段，確保使用 `pnpm deploy --filter` 來減少不必要的檔案傳輸。
 
