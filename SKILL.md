@@ -19,7 +19,7 @@ description: 專業程式碼審核專家。預設進行通用審核，支援 FSD
     *   偵測到 `pnpm-workspace.yaml` 或 `turbo.json`時，載入 `references/monorepo.md`。
     *   若偵測到 Vue 2 相關語法（如 `data()`, `methods`）或設定，載入 `references/vue2.md`。
     *   若偵測到 Vue 3 相關語法（如 `setup`, `ref`, `reactive`）或設定，載入 `references/vue3.md`。
-    *   若為 FSD 專案或提及架構，載入 `references/fsd.md`。
+    *   若為 FSD 專案 or 提及架構，載入 `references/fsd.md`。
     *   若提及視覺或跑版，載入 `references/visual.md` 並啟動 `browser-agent` 流程。
 
 3.  **回饋格式**：
@@ -57,8 +57,10 @@ description: 專業程式碼審核專家。預設進行通用審核，支援 FSD
         - **建議修正**：[具體建議和範例程式碼，若有官方文件請附上連結]
         - **理由**：[為何需要修正]
 4.  **HTML 報告 (僅限明確要求)**：
-    *   只有當使用者說「生成報告」或「生成 HTML」時，讀取 `assets/report_template.html` 並生成 `review-report.html`。
-    *   **報告內容需包含**：整體總結、**本次審核套用的規範清單 (填入 USED_REFERENCES)**、發現的問題（含影響範圍、複製按鈕邏輯）。
+    *   只有當使用者說「生成報告」或「生成 HTML」時，才讀取 `assets/report_template.html` 並生成 `review-report.html`。
+    *   **報告內容需包含**：整體總結、**本次審核套用的規範清單 (填入 USED_REFERENCES)**。
+    *   **USED_REFERENCES 填寫要求**：必須區分並列出 **[全域規範]** (如 General, Vue3) 與 **[專案特定規範]** (來自 .gemini/references/ 的檔案名稱)。
+    *   發現的問題（含影響範圍、複製按鈕邏輯）。
     *   生成後詢問是否開啟。
 
 ## 參考資源
