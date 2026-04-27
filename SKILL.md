@@ -9,12 +9,17 @@ description: 專業程式碼審核專家。專注於精確、謹慎的深度審�
 
 ## 執行流程
 
-1.  **自動審核 (優先權排序)**：
+1.  **檢視基礎指令 (Mandates)**：
+    *   **首要步驟**：執行前必須先檢視**全域 `GEMINI.md`** 中的客製化設定與適用專案規則。
+    *   **遵循路徑映射**：若全域配置中指定了特定專案（如 `kirby`）應參閱的 `GEMINI.md` 路徑，必須優先讀取該路徑下的所有規範與指示。
+
+2.  **自動審核 (優先權排序)**：
     *   **優先遵循 GEMINI.md**：優先讀取並遵循工作區內 `GEMINI.md` (含全域配置中指定的路徑) 所定義的任何參考規範、開發標準或特定路徑映射。
     *   **載入專案規則**：若 `GEMINI.md` 未指定特定路徑，自動檢查目前專案根目錄是否有 `.gemini/references/` 資料夾。若有，載入該資料夾內所有 `.md` 檔案。
     *   **載入全域規則**：載入 Skill 內建的 `references/general.md` 與 `references/custom-rules.md`。
     *   **優先順序**：專案專屬配置 (GEMINI.md > .gemini/references/) 具有最高優先權，會覆蓋全域規則。
-2.  **進階模式 (選用)**：
+
+3.  **進階模式 (選用)**：
     *   *註：若符合多項偵測條件，將同時載入所有對應規範。*
     *   偵測到 `tsconfig.json` 或 `.ts` / `.tsx` 檔案時，載入 `references/typescript.md`。
     *   偵測到 `pnpm-workspace.yaml` 或 `turbo.json`時，載入 `references/monorepo.md`。
@@ -23,7 +28,7 @@ description: 專業程式碼審核專家。專注於精確、謹慎的深度審�
     *   若為 FSD 專案 or 提及架構，載入 `references/fsd.md`。
     *   若提及視覺或跑版，載入 `references/visual.md` 並啟動 `browser-agent` 流程。
 
-3.  **回饋格式**：
+4.  **回饋格式**：
     *   預設在對話中以 Markdown 格式輸出。
     *   **嚴重程度分級與格式**：
         ### 🔴 P0 Issues（必須修正）
@@ -57,7 +62,7 @@ description: 專業程式碼審核專家。專注於精確、謹慎的深度審�
         - **影響範圍**：[分析此問題可能影響的組件、模組、效能或安全性層面]
         - **建議修正**：[具體建議和範例程式碼，若有官方文件請附上連結]
         - **理由**：[為何需要修正]
-4.  **HTML 報告 (僅限明確要求)**：
+5.  **HTML 報告 (僅限明確要求)**：
     *   只有當使用者說「生成報告」或「生成 HTML」時，才讀取 `assets/report_template.html` 並生成 `review-report.html`。
     *   **報告內容需包含**：整體總結、**本次審核套用的規範清單 (填入 USED_REFERENCES)**。
     *   **USED_REFERENCES 填寫要求**：必須區分並列出 **[全域規範]** (如 General, Vue3) 與 **[專案特定規範]** (含 GEMINI.md 指定路徑或 .gemini/references/)。
