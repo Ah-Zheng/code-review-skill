@@ -9,7 +9,7 @@
         .summary-container { display: flex; flex-direction: column; gap: 20px; margin-bottom: 30px; }
         .summary-box { background: #f4f4f4; padding: 15px; border-radius: 5px; border-left: 5px solid #333; }
         .refs-box { background: #eef5ff; padding: 15px; border-radius: 5px; border-left: 5px solid #005cc5; }
-        .box-title { font-weight: bold; margin-bottom: 8px; display: block; font-size: 1.1em; }
+        .box-title { font-weight: bold; margin-bottom: 10px; display: block; font-size: 1.1em; color: #005cc5; }
         
         .issue { border: 1px solid #ddd; border-radius: 5px; margin-bottom: 15px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
         .issue-header { padding: 10px 15px; color: white; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
@@ -28,8 +28,11 @@
         .copy-btn:hover { opacity: 0.7; }
         .copy-btn svg { fill: currentColor; }
         .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #333; color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.9em; opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 1000; }
-        ul.ref-list { margin: 5px 0 0 20px; padding: 0; }
-        ul.ref-list li { font-size: 0.95em; color: #004a99; }
+        
+        /* 條列式規範清單樣式 */
+        .ref-list { margin: 0; padding-left: 20px; list-style-type: disc; }
+        .ref-list li { font-size: 0.95em; color: #333; margin-bottom: 4px; }
+        .ref-category { font-weight: bold; color: #005cc5; margin-top: 8px; display: block; text-decoration: underline; }
     </style>
 </head>
 <body>
