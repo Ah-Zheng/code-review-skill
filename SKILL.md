@@ -9,10 +9,11 @@ description: 專業程式碼審核專家。專注於精確、謹慎的深度審�
 
 ## 執行流程
 
-1.  **自動審核**：
-    *   **載入全域規則**：預設載入 Skill 內建的 `references/general.md` 與 `references/custom-rules.md`。
-    *   **載入專案規則**：自動檢查目前專案根目錄是否有 `.gemini/references/` 資料夾。若有，載入該資料夾內所有 `.md` 檔案作為審核依據；若無則跳過。
-    *   **優先順序**：若專案規則與全域規則衝突，以**專案規則優先**。
+1.  **自動審核 (優先權排序)**：
+    *   **優先遵循 GEMINI.md**：優先讀取並遵循工作區內 `GEMINI.md` (含全域配置中指定的路徑) 所定義的任何參考規範、開發標準或特定路徑映射。
+    *   **載入專案規則**：若 `GEMINI.md` 未指定特定路徑，自動檢查目前專案根目錄是否有 `.gemini/references/` 資料夾。若有，載入該資料夾內所有 `.md` 檔案。
+    *   **載入全域規則**：載入 Skill 內建的 `references/general.md` 與 `references/custom-rules.md`。
+    *   **優先順序**：專案專屬配置 (GEMINI.md > .gemini/references/) 具有最高優先權，會覆蓋全域規則。
 2.  **進階模式 (選用)**：
     *   *註：若符合多項偵測條件，將同時載入所有對應規範。*
     *   偵測到 `tsconfig.json` 或 `.ts` / `.tsx` 檔案時，載入 `references/typescript.md`。
@@ -59,7 +60,7 @@ description: 專業程式碼審核專家。專注於精確、謹慎的深度審�
 4.  **HTML 報告 (僅限明確要求)**：
     *   只有當使用者說「生成報告」或「生成 HTML」時，才讀取 `assets/report_template.html` 並生成 `review-report.html`。
     *   **報告內容需包含**：整體總結、**本次審核套用的規範清單 (填入 USED_REFERENCES)**。
-    *   **USED_REFERENCES 填寫要求**：必須區分並列出 **[全域規範]** (如 General, Vue3) 與 **[專案特定規範]** (來自 .gemini/references/ 的檔案名稱)。
+    *   **USED_REFERENCES 填寫要求**：必須區分並列出 **[全域規範]** (如 General, Vue3) 與 **[專案特定規範]** (含 GEMINI.md 指定路徑或 .gemini/references/)。
     *   發現的問題（含影響範圍、複製按鈕邏輯）。
     *   生成後詢問是否開啟。
 
