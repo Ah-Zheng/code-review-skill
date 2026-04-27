@@ -57,7 +57,8 @@ description: 專業程式碼審核專家。預設進行通用審核，支援 FSD
         - **建議修正**：[具體建議和範例程式碼，若有官方文件請附上連結]
         - **理由**：[為何需要修正]
 4.  **HTML 報告 (僅限明確要求)**：
-    *   只有當使用者說「生成報告」或「生成 HTML」時，才讀取 `assets/report_template.html` 並生成 `review-report.html`。
+    *   只有當使用者說「生成報告」或「生成 HTML」時，讀取 `assets/report_template.html` 並生成 `review-report.html`。
+    *   **報告內容需包含**：整體總結、**本次審核套用的規範清單 (填入 USED_REFERENCES)**、發現的問題（含影響範圍、複製按鈕邏輯）。
     *   生成後詢問是否開啟。
 
 ## 參考資源
